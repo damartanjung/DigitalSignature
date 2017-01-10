@@ -3197,18 +3197,18 @@ class TCPDF {
 		// mark page as open
 		$this->pageopen[$this->page] = true;
 		// restore graphic settings
-		$this->setGraphicVars($gvars);
-		// mark this point
-		$this->setPageMark();
-		// print page header
-		$this->setHeader();
-		// restore graphic settings
-		$this->setGraphicVars($gvars);
-		// mark this point
-		$this->setPageMark();
-		// print table header (if any)
-		$this->setTableHeader();
-		// set mark for empty page check
+		// $this->setGraphicVars($gvars);
+		// // mark this point
+		// $this->setPageMark();
+		// // print page header
+		// $this->setHeader();
+		// // restore graphic settings
+		// $this->setGraphicVars($gvars);
+		// // mark this point
+		// $this->setPageMark();
+		// // print table header (if any)
+		// $this->setTableHeader();
+		// // set mark for empty page check
 		$this->emptypagemrk[$this->page]= $this->pagelen[$this->page];
 	}
 
