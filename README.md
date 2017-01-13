@@ -1,1 +1,1 @@
-Simple PDF signer with pkcs 12 certificate using TCPDF and FPDI
+Simple PDF signer with pkcs12 certificate using TCPDF and FPDI
