@@ -15,7 +15,7 @@ if(isset($_FILES['file']) && isset($_FILES['cert'])) {
 
  	$multiple = false;
  	foreach ($_SESSION['dataUpload'] as $value) {
- 		if(strpos($value, substr($file_name, 0, -13)) !== false) {
+ 		if(strpos($value, substr($file_name, 0, -4)) !== false) {
  			$multiple = true;
  			$_SESSION['valid'] = 'There exists a file with same name';
  		}
