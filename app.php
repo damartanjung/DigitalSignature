@@ -60,11 +60,11 @@ if(isset($_FILES['file']) && isset($_FILES['cert'])) {
 			$pdf->setSignature($certificate, $certs['pkey'], $_POST['pass'], '', 2, array());
 
 			// output the signed file
-			$file_name = substr($file_name, 0, -4) . ' - Signed.pdf';
-			$pdf->Output(dirname(__FILE__) . '/signed/' . $file_name, 'F');
+			$name_signed = substr($file_name, 0, -4) . ' - Signed.pdf';
+			$pdf->Output(dirname(__FILE__) . '/signed/' . $name_signed, 'F');
 
 	 		$tmp = "key" . $_SESSION['idx'];
-	 		$_SESSION['dataUpload'][$tmp] = "<tr><td>" . substr($file_name, 0, -13) . "</td><td style='text-align: center;'><form action=\"app.php\" method=\"post\" enctype=\"multipart/form-data\"><input type=\"hidden\" value=\"" . $file_name . "\" name=\"hapus\"/><input type=\"hidden\" value=\"" . $_SESSION['idx'] . "\" name=\"idxHapus\"/><input type=\"Submit\" value=\"Delete\" name=\"submit\"/></form></td><td style='text-align: center;'><form action=\"app.php\" method=\"post\" enctype=\"multipart/form-data\"><input type=\"hidden\" value=\"" . $file_name . "\" name=\"download\"/><input type=\"submit\" value=\"Download\" name=\"submit\"/></form></td>";
+	 		$_SESSION['dataUpload'][$tmp] = "<tr><td>" . substr($name_signed, 0, -13) . "</td><td style='text-align: center;'><form action=\"app.php\" method=\"post\" enctype=\"multipart/form-data\"><input type=\"hidden\" value=\"" . $name_signed . "\" name=\"hapus\"/><input type=\"hidden\" value=\"" . $_SESSION['idx'] . "\" name=\"idxHapus\"/><input type=\"Submit\" value=\"Delete\" name=\"submit\"/></form></td><td style='text-align: center;'><form action=\"app.php\" method=\"post\" enctype=\"multipart/form-data\"><input type=\"hidden\" value=\"" . $name_signed . "\" name=\"download\"/><input type=\"submit\" value=\"Download\" name=\"submit\"/></form></td>";
 	 		$_SESSION['idx'] += 1;
 	 		$_SESSION['valid'] = 'Sign Success!';
 	 	}
